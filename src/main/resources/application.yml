@@ -1,0 +1,31 @@
+---
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+#    stream:
+#      bindings:
+#        text2systemchannel:
+#          destination: text2system
+#      default:
+#        contentType: application/json
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
+management:
+  endpoint:
+    health:
+      roles: ADMIN
+      show-details: when_authorized
+
+
+
+
+#spring.cloud.stream.bindings.fastpasstollchannel.producer.partitionKeyExpression=payload.stationId
+#spring.cloud.stream.bindings.fastpasstollchannel.producer.partitionCount=3
